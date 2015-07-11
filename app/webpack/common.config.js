@@ -37,7 +37,7 @@ export default {
       },
       {
         test: /\.woff$/,
-        loaders: ['url?limit=100000']
+        loaders: ['url?limit=25000']
       }
     ],
     noParse: /\.min\.js/

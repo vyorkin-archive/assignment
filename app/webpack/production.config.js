@@ -9,6 +9,8 @@ import commonConfig from './common.config';
 
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+const NODE_MODULES_PATH = path.resolve(__dirname, '../node_modules');
+
 export default merge(commonConfig, {
   module: {
     loaders: [

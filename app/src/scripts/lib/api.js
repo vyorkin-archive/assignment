@@ -15,7 +15,7 @@ class Api {
   }
 
   async ajax(endpoint, method, options) {
-    const { params, data: data = {} } = options;
+    const { params, data: data = null } = options;
 
     const query = this.queryParams(params);
     const url = `${this.rootUrl}/${endpoint}${query}`;

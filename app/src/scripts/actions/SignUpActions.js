@@ -6,3 +6,5 @@ class SignUpActions {
     return api.post('sign-up', data);
   }
 }
+
+export default alt.createActions(SignInActions);

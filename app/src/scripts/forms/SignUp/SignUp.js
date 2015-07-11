@@ -5,24 +5,20 @@ import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/default.css';
 
-import CountryStore from '../../stores/CountryStore';
-import CountryActions from '../../actions/CountryActions';
-
-import CityStore from '../../stores/CityStore';
-import CityActions from '../../actions/CityActions';
+import GeoStore from '../../stores/GeoStore';
 
 import './SignUp.css';
 
 @connectToStores
 export default class SignUpForm extends Component {
   static getStores() {
-    return [CountryStore, CityStore];
+    return [GeoStore];
   }
 
   static getPropsFromStores() {
     return {
-      countries: CountryStore.getState().items,
-      cities: CityStore.getState().items
+      countries: GeoStore.getState().countries,
+      cities: GeoStore.getState().cities
     };
   }
 
@@ -39,36 +35,36 @@ export default class SignUpForm extends Component {
   }
 
   componentWillMount() {
-    CountryStore.fetch();
+    GeoStore.fetchCountries();
   }
 
   render() {
     return (
-      <div className='form'>
-        <form onSubmit={::this.submit} className='form__body'>
-          <input type='text' placeholder='Фамилия' className='input' />
-          <input type='text' placeholder='Имя' className='input' />
-          <input type='text' placeholder='Отчество' className='input' />
-          <input type='email' placeholder='Email' className='input' />
-          <Select ref='countrySelect' name='country' clearable={false} placeholder='Страна'
-            noResultsText='ничего не найдено' searchPromptText='поиск'
-            options={this.props.countries.map(this.toSelectOptions)}
-            value={this.state.country} onChange={::this.onCountryChange} />
-          <Select ref='citySelect' name='city' clearable={false} placeholder='Город'
-            noResultsText='ничего не найдено' searchPromptText='поиск'
-            disabled={!this.state.country} options={this.props.cities.map(this.toSelectOptions)} />
-          <Select ref='osSelect' name='os' clearable={false} placeholder='ОС'
-            noResultsText='ничего не найдено' searchPromptText='поиск'
-            options={this.props.osOptions} />
-        </form>
-        <div className='form__footer'>
-          <div className='form__controls'>
-            <button type='submit' className='button button--submit button--signup'>
-              Зарегистрироваться
-            </button>
+        <form onSubmit={::this.submit} className='form'>
+          <div className='form__body'>
+            <input type='text' placeholder='Фамилия' className='input' />
+            <input type='text' placeholder='Имя' className='input' />
+            <input type='text' placeholder='Отчество' className='input' />
+            <input type='email' placeholder='Email' className='input' />
+            <Select ref='countrySelect' name='country' clearable={false} placeholder='Страна'
+              noResultsText='ничего не найдено' searchPromptText='поиск'
+              options={this.props.countries.map(this.toSelectOptions)}
+              value={this.state.country} onChange={::this.onCountryChange} />
+            <Select ref='citySelect' name='city' clearable={false} placeholder='Город'
+              noResultsText='ничего не найдено' searchPromptText='поиск'
+              disabled={!this.state.country} options={this.props.cities.map(this.toSelectOptions)} />
+            <Select ref='osSelect' name='os' clearable={false} placeholder='ОС'
+              noResultsText='ничего не найдено' searchPromptText='поиск'
+              options={this.props.osOptions} />
           </div>
-        </div>
-      </div>
+          <div className='form__footer'>
+            <div className='form__controls'>
+              <button type='submit' className='button button--submit button--signup'>
+                Зарегистрироваться
+              </button>
+            </div>
+          </div>
+        </form>
     );
   }
 
@@ -86,7 +82,7 @@ export default class SignUpForm extends Component {
   onCountryChange(_, [country]) {
     if (country) {
       this.setState({ country: country.label });
-      CityStore.fetch(country.value);
+      GeoStore.fetchCities(country.value);
     } else {
       this.setState({ country: null });
     }

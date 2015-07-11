@@ -11,7 +11,7 @@ export default {
   PRODUCTION: production,
   ENVIRONMENT: production ? 'production' : 'development',
 
-  assets: ['src/assets/**', 'src/fonts/**'],
+  assets: ['src/assets/**'],
 
   sourceMap: production && config.sourceMap,
   devtool: '#source-map',
