@@ -1,5 +1,6 @@
-dist
-cabal-dev
+api/dist
+api/cabal-dev
+api/.cabal-sandbox/
 *.o
 *.hi
 *.chi
@@ -9,8 +10,9 @@ cabal-dev
 .virtualenv
 .hpc
 .hsenv
-.cabal-sandbox/
 cabal.sandbox.config
 *.prof
 *.aux
 *.hp
+api/assignment.sqlite3
+app/build

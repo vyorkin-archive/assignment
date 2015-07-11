@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'robotoregular';
+    src: url('/Roboto-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('/Roboto-Medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoblack';
+    src: url('/Roboto-Black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('/Roboto-Light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'robotoregular';
+  font-size: 18px;
+  color: #fefefe; 
+  font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'robotoblack';
+}

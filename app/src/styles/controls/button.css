@@ -1,0 +1,32 @@
+.button {
+  display: inline-block;
+  padding: 0.34em 0.68em;
+  vertical-align: middle;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  touch-action: manipulation;
+}
+
+.button--default {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #333;
+}
+
+.button--default:hover {
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.button--submit {
+  background-color: #71993a;
+  border-color: #618f2a;
+}
+
+.button--submit:hover {
+  background-color: #89b452;
+  border-color: #74b93d;
+}

@@ -1,0 +1,20 @@
+Country json
+    name String
+    UniqueCountryName name
+    deriving Show
+City json
+    country CountryId
+    name String
+    UniqueCityName name
+    deriving Show
+User json
+    phone String
+    firstName String Maybe
+    middleName String Maybe
+    lastName String Maybe
+    os OS
+    country CountryId
+    city CityId
+    passcode String Maybe
+    UniqueUserPhone phone
+    deriving Show

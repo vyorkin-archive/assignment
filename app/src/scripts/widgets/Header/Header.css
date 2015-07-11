@@ -1,0 +1,37 @@
+.header {
+  background-color: #71993a;
+  height: 50%;
+}
+
+.header__content {
+  padding-top: 6%;
+}
+
+.header__title {
+  margin: 0;
+  font-family: 'robotolight';
+  font-size: 2em;
+  font-weight: lighter;
+  color: #fff;
+}
+
+.header__highlight {
+  font-family: 'robotoblack';
+}
+
+.header__desc {
+  color: #000;
+  font-size: 0.8em;
+}
+
+@media (min-width: 360px) {
+  .header__desc {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__title {
+    font-size: 4em;
+  }
+}

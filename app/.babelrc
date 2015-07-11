@@ -1,0 +1,11 @@
+{
+  "stage": 0,
+  "experimental": true,
+  "optional": [
+    "runtime",
+    "utility.inlineEnvironmentVariables",
+    "minification.removeDebugger"
+  ],
+  "loose": ["es6.classes", "es6.properties.computed"],
+  "blacklist": ["es6.tailCall"]
+}

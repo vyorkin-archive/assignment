@@ -1,0 +1,25 @@
+{
+  "browsers": [
+    "last 2 versions",
+    "> 5% in RU"
+  ],
+  "features" : {
+    "compress": {
+      "preserveHacks": true,
+      "removeAllComments": true
+    },
+    "sourcemap": true,
+    "calc": true,
+    "customMedia": true,
+    "mediaQueriesRange": true,
+    "import": {
+      "path": [
+        "src/styles",
+        "src/scripts/layouts",
+        "src/scripts/components",
+        "src/scripts/widgets",
+        "src/scripts/pages"
+      ]
+    }
+  }
+}

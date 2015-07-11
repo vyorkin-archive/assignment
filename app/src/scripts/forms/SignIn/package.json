@@ -1,0 +1,6 @@
+{
+  "name": "SignInForm",
+  "version": "0.1.0-pre-alpha",
+  "private": true,
+  "main": "SignIn.js"
+}
