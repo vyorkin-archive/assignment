@@ -6,6 +6,7 @@ import Navigation from '../../components/Navigation';
 
 import './Index.css';
 
+@requireAuth('sign-in')
 export default class Index {
   render() {
     return (

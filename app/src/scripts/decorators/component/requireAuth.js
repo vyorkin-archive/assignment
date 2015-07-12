@@ -1,5 +1,4 @@
 import React from 'react';
-
 import auth from '../../lib/auth';
 
 const requireAuth = (Component, redirectTo) => {
@@ -7,9 +6,9 @@ const requireAuth = (Component, redirectTo) => {
     static willTransitionTo(transition) {
       const nextPath = transition.path;
 
-      const isAuthenticated = false;
-      if (!isAuthenticated) {
-        return transition.redirect(redirectTo, {}, { nextPath });
+      if (!auth.isAuthenticated()) {
+        auth.attemptedTransition = transition;
+        return transition.redirect(redirectTo);
       }
     }
 

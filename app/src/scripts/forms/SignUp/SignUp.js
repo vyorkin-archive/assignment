@@ -73,10 +73,10 @@ export default class SignUpForm extends Component {
   }
 
   submit(e) {
+    e.preventDefault();
     if (validate()) {
       console.log('form is valid');
     }
-    e.preventDefault();
   }
 
   onCountryChange(_, [country]) {

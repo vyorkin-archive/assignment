@@ -1,20 +1,25 @@
+import Router from 'react-router';
 import api from './api';
 
 class Auth {
+  attemptedTransition = null;
+
   getToken() {
     return localStorage.token;
   }
 
   signIn(phone, passcode) {
-    return new Promise((resolve, reject) => {
-      if (this.isSignedIn()) {
-        resolve(true);
-      } else {
-        let form = new FormData();
-        form.append('phone', phone);
-        form.append('passcode', passcode);
+    let form = new FormData();
+    form.append('phone', phone);
+    form.append('passcode', passcode);
 
-        return api.post('sign-in', form);
+    api.post('sign-in', form).then(() => {
+      const transition = this.attemptedTransition;
+      if (transition) {
+        this.attemptedTransition = null;
+        transition.retry();
+      } else {
+        Router.replaceWith('/');
       }
     });
   }
@@ -23,12 +28,8 @@ class Auth {
     delete localStorage.token;
   }
 
-  isSignedIn() {
+  isAuthenticated() {
     return !!localStorage.token;
-  }
-
-  onChange() {
-    // TODO: hooy s nim.
   }
 }
 

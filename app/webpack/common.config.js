@@ -5,6 +5,7 @@ import webpack from 'webpack';
 import config from '../config';
 
 import HtmlPlugin from 'html-webpack-plugin';
+import ProgressPlugin from 'nyan-progress-webpack-plugin';
 
 export default {
   entry: [path.resolve(__dirname, '../src/scripts/main')],
@@ -53,7 +54,8 @@ export default {
     new HtmlPlugin({
       title: config.appName,
       template: path.resolve(__dirname, '../src/templates/main.html')
-    })
+    }),
+    new ProgressPlugin()
   ],
 
   target: 'web',
