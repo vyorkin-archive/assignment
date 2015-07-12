@@ -18,7 +18,7 @@ export default merge(commonConfig, {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['react-hot', 'babel?blacklist=flow'],
+        loaders: ['react-hot', 'babel'],
         include: [path.resolve(__dirname, '../src/scripts')]
       },
       {

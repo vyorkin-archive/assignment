@@ -1,7 +1,7 @@
 [x] Finish notification component
 [ ] Remove sign-up button modifier class, add media query for it to look the same
-[ ] Use flex!
-[ ] Fix layout for horizontal orientation, introduce additional media queries
+[x] Fix layout for horizontal orientation, introduce additional media queries
+[ ] Replace media queries with flexbox
 [ ] Form validation
 [ ] Try to cache request using local in sources
 [ ] Find out whats wrong with robotolight font when building for production

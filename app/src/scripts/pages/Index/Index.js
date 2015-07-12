@@ -2,7 +2,6 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 
 import requireAuth from '../../decorators/component/requireAuth';
-import Navigation from '../../widgets/Navigation';
 
 import './Index.css';
 
@@ -15,7 +14,6 @@ export default class Index {
           <h1>Секретная страница</h1>
           <p>Поздравляю! Ты добрался до секретной страницы c печенькой!</p>
           <img src={require('./cookie.png')} />
-          <Navigation />
         </section>
       </DocumentTitle>
     );

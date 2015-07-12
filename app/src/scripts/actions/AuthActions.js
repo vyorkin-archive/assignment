@@ -1,5 +1,5 @@
 import alt from '../lib/alt';
-import api from '../lib/api';
+import auth from '../lib/auth';
 
 class AuthActions {
   constructor() {
@@ -7,10 +7,14 @@ class AuthActions {
   }
 
   signIn(phone, passcode) {
-    let form = new FormData();
+    const form = new FormData();
     form.append('phone', phone);
     form.append('passcode', passcode);
-    return api.post('sign-in', form);
+    return auth.signIn(form);
+  }
+
+  signOut() {
+    auth.signOut();
   }
 }
 

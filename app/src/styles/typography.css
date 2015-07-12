@@ -37,3 +37,19 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'robotoblack';
 }
+
+dt {
+  float: left;
+  width: 5em;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'robotomedium';
+}
+
+dd {
+  margin-left: 6em;
+  font-family: 'robotolight';
+}

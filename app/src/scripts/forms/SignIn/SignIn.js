@@ -42,7 +42,7 @@ export default class SignInForm extends Component {
           <div className='form__footer'>
             <a className='link link--success'
               onClick={::this.requestPasscode}>
-              Выслать пароль
+              Отправить код
             </a>
             <div className='form__controls clearfix'>
               <div className='form__group pull-left'>

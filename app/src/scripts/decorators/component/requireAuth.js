@@ -1,7 +1,7 @@
 import React from 'react';
 import auth from '../../lib/auth';
 
-const requireAuth = (Component, redirectTo) => {
+const requireAuth = (Component, redirectTo = 'sign-in') => {
   return class Authenticated extends React.Component {
     static willTransitionTo(transition) {
       if (!auth.isAuthenticated()) {

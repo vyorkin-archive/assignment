@@ -7,6 +7,7 @@ export default (
     <Route name='sign-up' handler={require('../pages/SignUp')} path='/sign-up' />
     <Route name='sign-in' handler={require('../pages/SignIn')} path='/sign-in' />
     <Route name='playground' handler={require('../pages/Playground')} path='/playground' />
+    <Route name='profile' handler={require('../pages/Profile')} path='/profile' />
     <NotFoundRoute handler={require('../pages/NotFound')} name='not-found' />
   </Route>
 );

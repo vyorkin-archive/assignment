@@ -6,9 +6,9 @@ import './NotFound.css';
 export default class NotFound {
   render() {
     return (
-      <DocumentTitle title='Not found'>
+      <DocumentTitle title='Страница не найдена'>
         <section className='not-found'>
-          <h1>Not found</h1>
+          <h1>Такой страницы не существует</h1>
         </section>
       </DocumentTitle>
     );

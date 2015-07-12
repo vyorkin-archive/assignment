@@ -1,0 +1,24 @@
+import React from 'react';
+import DocumentTitle from 'react-document-title';
+
+import requireAuth from '../../decorators/component/requireAuth';
+import auth from '../../lib/auth';
+
+import UserProfile from '../../widgets/UserProfile';
+
+import './Profile.css';
+
+@requireAuth('sign-in')
+export default class Profile {
+  render() {
+    return (
+      <DocumentTitle title='Профиль'>
+        <section className='profile'>
+          <h1>Профиль</h1>
+          <UserProfile {...auth.currentUser()} />
+        </section>
+      </DocumentTitle>
+    );
+  }
+}
+

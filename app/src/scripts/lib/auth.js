@@ -4,32 +4,40 @@ import api from './api';
 class Auth {
   attemptedTransition = null;
 
-  getToken() {
-    return localStorage.token;
-  }
+  signIn(form) {
+    api.post('sign-in', form).then((data) => {
+      // woooot? (% we should use smth like JWT
+      const fakeToken = Math.random().toString(36).substring(7);
 
-  signIn(phone, passcode) {
-    const form = new FormData();
-    form.append('phone', phone);
-    form.append('passcode', passcode);
+      localStorage.setItem('token', fakeToken);
+      localStorage.setItem('currentUser', JSON.stringify(data));
 
-    api.post('sign-in', form).then(() => {
       const transition = this.attemptedTransition;
       if (transition) {
         this.attemptedTransition = null;
         transition.retry();
       } else {
-        Router.replaceWith('/');
+        Router.replaceWith('index');
       }
     });
   }
 
   signOut() {
-    delete localStorage.token;
+    localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
+  }
+
+  currentUser() {
+    const user = localStorage.getItem('currentUser');
+    return user && JSON.parse(user);
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
   }
 
   isAuthenticated() {
-    return !!localStorage.token;
+    return !!this.getToken();
   }
 }
 

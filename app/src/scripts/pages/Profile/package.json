@@ -1,6 +1,6 @@
 {
-  "name": "Playground",
+  "name": "Profile",
   "version": "0.1.0-pre-alpha",
   "private": true,
-  "main": "Playground.js"
+  "main": "Profile.js"
 }

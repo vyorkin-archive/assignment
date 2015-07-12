@@ -4,6 +4,7 @@ import DocumentTitle from 'react-document-title';
 
 import Logo from '../../widgets/Logo';
 import Header from '../../widgets/Header';
+import Navigation from '../../widgets/Navigation';
 
 import './App.css';
 
