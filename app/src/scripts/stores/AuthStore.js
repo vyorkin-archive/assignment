@@ -12,7 +12,7 @@ class AuthStore {
     this.passcode = '';
   }
 
-  onReceivePasscode(passcode) {
+  onReceivePasscode({ passcode }) {
     this.setState({ passcode });
   }
 }

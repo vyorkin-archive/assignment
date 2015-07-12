@@ -40,7 +40,7 @@ export default class SignUpForm extends Component {
 
   render() {
     return (
-        <form onSubmit={::this.submit} className='form'>
+        <form onSubmit={::this.handleSubmit} className='form'>
           <div className='form__body'>
             <input type='text' placeholder='Фамилия' className='input' />
             <input type='text' placeholder='Имя' className='input' />
@@ -49,7 +49,7 @@ export default class SignUpForm extends Component {
             <Select ref='countrySelect' name='country' clearable={false} placeholder='Страна'
               noResultsText='ничего не найдено' searchPromptText='поиск'
               options={this.props.countries.map(this.toSelectOptions)}
-              value={this.state.country} onChange={::this.onCountryChange} />
+              value={this.state.country} onChange={::this.handleCountryChange} />
             <Select ref='citySelect' name='city' clearable={false} placeholder='Город'
               noResultsText='ничего не найдено' searchPromptText='поиск'
               disabled={!this.state.country} options={this.props.cities.map(this.toSelectOptions)} />
@@ -72,14 +72,14 @@ export default class SignUpForm extends Component {
     return this.state.errors.size === 0;
   }
 
-  submit(e) {
-    e.preventDefault();
+  handleSubmit(event) {
+    event.preventDefault();
     if (validate()) {
       console.log('form is valid');
     }
   }
 
-  onCountryChange(_, [country]) {
+  handleCountryChange(_, [country]) {
     if (country) {
       this.setState({ country: country.label });
       GeoStore.fetchCities(country.value);

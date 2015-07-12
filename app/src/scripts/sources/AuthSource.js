@@ -3,9 +3,7 @@ import AuthActions from '../actions/AuthActions';
 
 export default {
   requestPasscode: {
-    remote(_state, phone) {
-      return api.get('passcode', { phone });
-    },
+    remote: (_, phone) => api.get('passcode', { phone }),
     success: AuthActions.receivePasscode
   }
 };

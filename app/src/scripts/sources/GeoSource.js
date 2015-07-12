@@ -3,9 +3,7 @@ import GeoActions from '../actions/GeoActions';
 
 export default {
   fetchCountries: {
-    remote() {
-      return api.get('countries');
-    },
+    remote: () => api.get('countries'),
     success: GeoActions.loadCountries
   },
   fetchCities: {

@@ -2,7 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 
 import requireAuth from '../../decorators/component/requireAuth';
-import Navigation from '../../components/Navigation';
+import Navigation from '../../widgets/Navigation';
 
 import './Index.css';
 

@@ -9,7 +9,7 @@ class Auth {
   }
 
   signIn(phone, passcode) {
-    let form = new FormData();
+    const form = new FormData();
     form.append('phone', phone);
     form.append('passcode', passcode);
 

@@ -3,8 +3,13 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import auth from '../../lib/auth';
+
 import AuthActions from '../../actions/AuthActions';
 import AuthStore from '../../stores/AuthStore';
+
+import Notification from '../../components/Notification';
+
+import './SignIn.css';
 
 @connectToStores
 export default class SignInForm extends Component {
@@ -22,12 +27,19 @@ export default class SignInForm extends Component {
 
   render() {
     return (
-      <form onSubmit={::this.submit} className='form'>
-        <div className='form__body'>
-          <input ref='phone' type='text' placeholder='Телефон' className='input' />
-          <input ref='passcode' type='password' placeholder='Код доступа' className='input' />
-        </div>
-        <div className='form__footer'>
+      <div>
+        <Notification isActive={this.props.passcode}>
+          <div className='passcode'>
+            <span className='passcode__title'>код доступа:</span>
+            <span className='passcode__value'>{this.props.passcode}</span>
+          </div>
+        </Notification>
+        <form onSubmit={::this.handleSubmit} className='form'>
+          <div className='form__body'>
+            <input ref='phone' type='text' placeholder='Телефон' className='input' />
+            <input ref='passcode' type='password' placeholder='Код доступа' className='input' />
+          </div>
+          <div className='form__footer'>
             <a className='link link--success'
               onClick={::this.requestPasscode}>
               Выслать пароль
@@ -45,25 +57,23 @@ export default class SignInForm extends Component {
                 <button type='submit' className='button button--submit'>Войти</button>
               </div>
             </div>
-        </div>
-        <h2>passcode: {this.props.passcode}</h2>
-      </form>
+          </div>
+        </form>
+      </div>
     );
   }
 
   requestPasscode() {
     const phone = this.refs.phone.getDOMNode().value;
-    if (phone) {
-      AuthStore.requestPasscode(phone);
-    }
+    AuthStore.requestPasscode(phone);
   }
 
   validate() {
     return this.state.errors.size === 0;
   }
 
-  submit(e) {
-    e.preventDefault();
+  handleSubmit(event) {
+    event.preventDefault();
 
     if (this.validate()) {
       const phone = this.refs.phone.getDOMNode().value;
