@@ -15,6 +15,11 @@
   font-size: 2em;
   font-weight: lighter;
   color: #fff;
+  text-decoration: none;
+}
+
+.header__title:hover {
+  color: #020202;
 }
 
 .header__highlight {

@@ -61,7 +61,7 @@ export default class SignUpForm extends Component {
           </div>
           <div className='form__footer'>
             <div className='form__controls'>
-              <button type='submit' className='button button--submit button--signup'>
+              <button type='submit' className='button button--success button--signup'>
                 Зарегистрироваться
               </button>
             </div>

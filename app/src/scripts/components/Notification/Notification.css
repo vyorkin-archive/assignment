@@ -3,14 +3,10 @@
   top: -100%;
   right: 0;
   width: 100%;
-  padding: 0.2em;
-  box-sizing: border-box;
   color: #fefefe;
   background-color: rgba(0, 0, 0, .75);
   box-shadow: 0 0 1px 1px rgba(10, 10, 11, .125);
   transition: .5s cubic-bezier(0.8, 0.01, 0.5, 1.0);
-  cursor: default;
-  height: 3em;
 }
 
 .notification--active {
@@ -18,5 +14,5 @@
 }
 
 .notification__content {
-  padding: 0.4em;
+  padding: 0.4em 0;
 }

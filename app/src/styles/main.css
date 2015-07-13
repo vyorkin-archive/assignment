@@ -9,8 +9,6 @@
 @import 'controls/button.css';
 @import 'controls/link.css';
 
-@import 'utils.css';
-
 html {
   overflow-x: hidden;
 }

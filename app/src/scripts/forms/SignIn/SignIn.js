@@ -52,18 +52,17 @@ export default class SignInForm extends Component {
               onClick={::this.requestPasscode}>
               Отправить код
             </a>
-            <div className='form__controls clearfix'>
-              <div className='form__group pull-left'>
-                <div className='checkbox'>
-                  <input type='checkbox' id='sign-in-secure' className='checkbox__input' />
-                  <label htmlFor='sign-in-secure' className='checkbox__label' >
-                    Чужой компьютер
-                  </label>
-                </div>
+            <div className='form__controls'>
+              <div className='checkbox checkbox--secure'>
+                <input type='checkbox' id='sign-in-secure' className='checkbox__input' />
+                <label htmlFor='sign-in-secure' className='checkbox__label' >
+                  Чужой компьютер
+                </label>
               </div>
-              <div className='form__group pull-right'>
-                <button type='submit' className='button button--submit'>Войти</button>
-              </div>
+              <button type='submit'
+                className='button button--success button--signin'>
+                Войти
+              </button>
             </div>
           </div>
         </Form>

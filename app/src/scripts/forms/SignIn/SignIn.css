@@ -1,3 +1,11 @@
+.checkbox--secure {
+  flex: 70%;
+}
+
+.button--signin {
+  flex: 30%;
+}
+
 .passcode {
   text-align: center;
 }
@@ -9,7 +17,8 @@
 .passcode__value {
   margin-left: 0.4em;
   vertical-align: middle;
-  font-family: 'robotoblack';
   letter-spacing: 0.4em;
+  font-family: 'robotoblack';
+  font-size: 1.8em;
   color: #ff0;
 }

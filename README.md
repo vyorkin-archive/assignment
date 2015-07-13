@@ -31,10 +31,11 @@ database: sqlite3 (for simplicity)
 
 # up & running
 
-Basically its just `make api && make app`, for more details see `Makefile`
+Basically its just `make api` and `make app`,
+for more details see `Makefile`
 
 * backend (api): `cd api && cabal install --only-dependencies && PORT=8088 cabal run`
-* frontend (spa): `cd app && npm install && npm start`
+* frontend (app): `cd app && npm install && npm start`
 
 To run tests:
 ```

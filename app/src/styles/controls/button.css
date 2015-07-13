@@ -21,12 +21,12 @@
   border-color: #adadad;
 }
 
-.button--submit {
+.button--success {
   background-color: #71993a;
   border-color: #618f2a;
 }
 
-.button--submit:hover {
+.button--success:hover {
   background-color: #89b452;
   border-color: #74b93d;
 }

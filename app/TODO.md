@@ -14,6 +14,7 @@
 [ ] Add flowcheck-loader for dev env
 [ ] Browsersync doesn't work custom react components?
 [ ] Input animation
+[x] Make header title clickable
 [ ] Try svgo-loader
 [ ] Hardcore acceptance testing
 [ ] Write a form validation lib
