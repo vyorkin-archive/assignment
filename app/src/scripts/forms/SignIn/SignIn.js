@@ -36,8 +36,8 @@ export default class SignInForm extends Component {
         </Notification>
         <form onSubmit={::this.handleSubmit} className='form'>
           <div className='form__body'>
-            <input ref='phone' type='text' placeholder='Телефон' className='input' />
-            <input ref='passcode' type='password' placeholder='Код доступа' className='input' />
+            <input ref='phone' type='text' placeholder='Телефон' className='input' required />
+            <input ref='passcode' type='password' placeholder='Код доступа' className='input' required />
           </div>
           <div className='form__footer'>
             <a className='link link--success'

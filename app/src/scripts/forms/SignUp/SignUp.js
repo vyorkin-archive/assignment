@@ -42,10 +42,10 @@ export default class SignUpForm extends Component {
     return (
         <form onSubmit={::this.handleSubmit} className='form'>
           <div className='form__body'>
-            <input type='text' placeholder='Фамилия' className='input' />
-            <input type='text' placeholder='Имя' className='input' />
-            <input type='text' placeholder='Отчество' className='input' />
-            <input type='email' placeholder='Email' className='input' />
+            <input type='text' placeholder='Фамилия' className='input' required />
+            <input type='text' placeholder='Имя' className='input' required />
+            <input type='text' placeholder='Отчество' className='input' required />
+            <input type='email' placeholder='Email' className='input' required />
             <Select ref='countrySelect' name='country' clearable={false} placeholder='Страна'
               noResultsText='ничего не найдено' searchPromptText='поиск'
               options={this.props.countries.map(this.toSelectOptions)}
