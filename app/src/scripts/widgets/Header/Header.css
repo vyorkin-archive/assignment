@@ -1,17 +1,12 @@
 .header {
   background-color: #71993a;
-  height: 50%;
-}
-
-@media (min-height: 800px) {
-  .header { height: 40%; }
-}
-@media (min-height: 1000px) {
-  .header { height: 30%; }
+  display: flex;
+  flex: 1;
+  align-items: center;
 }
 
 .header__content {
-  padding-top: 1em;
+  padding: 1em 0;
 }
 
 .header__title {
@@ -29,19 +24,6 @@
 .header__desc {
   color: #000;
   font-size: 0.8em;
-}
-
-@media (min-height: 375px) {
-  .header__content { padding-top: 2em; }
-}
-@media (min-height: 500px) {
-  .header__content { padding-top: 3em; }
-}
-@media (min-height: 600px) {
-  .header__title { font-size: 2.8em; }
-}
-@media (min-height: 800px) {
-  .header__content { padding-top: 4em; }
 }
 
 @media (min-width: 360px) and (min-height: 480px) {

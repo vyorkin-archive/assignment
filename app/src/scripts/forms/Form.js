@@ -31,6 +31,14 @@ export default class Form extends Component {
   handleChange(event) {
     const element = event.target;
     const key = element.getAttribute('name');
+    const validationsAttr = element.getAttribute('data-validations');
+    if (validationsAttr) {
+      const validations = validationsAttr.split(',');
+      validations.forEach((validation) => {
+        // TODO: hooyar tut
+      });
+    }
+
     this.fields.set(key, this.getValue(element));
   }
 
