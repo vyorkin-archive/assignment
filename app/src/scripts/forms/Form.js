@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
-import validator from 'validator';
+const validator = require('validator');
 
 export default class Form extends Component {
   static propTypes = {
@@ -13,8 +13,12 @@ export default class Form extends Component {
 
   constructor(props) {
     super(props);
+
     this.fields = new Map();
     this.state = { errors: new Map() };
+  }
+
+  componentDidMount() {
   }
 
   render() {
@@ -23,33 +27,55 @@ export default class Form extends Component {
         onSubmit={::this.handleSubmit}
         onChange={::this.handleChange}
         className={this.props.className}>
+        {this.renderErrors()}
         {this.props.children}
       </form>
     );
   }
 
+  renderErrors() {
+    return (
+      <ul>{[...this.state.errors].map(([k, v]) => <li>{v}</li>)}</ul>
+    );
+  }
+
   handleChange(event) {
     const element = event.target;
-    const key = element.getAttribute('name');
-    const validationsAttr = element.getAttribute('data-validations');
-    if (validationsAttr) {
-      const validations = validationsAttr.split(',');
-      validations.forEach((validation) => {
-        // TODO: hooyar tut
-      });
-    }
 
-    this.fields.set(key, this.getValue(element));
+    const key = element.getAttribute('name');
+    const value = this.getValue(element);
+
+    this.validate(element, key, value);
+    this.fields.set(key, value);
+  }
+
+  validate(element, key, value) {
+    const validations = element.dataset.validations || '';
+    const errorMessage = element.dataset.error;
+
+    validations.split(',').forEach((validation) => {
+      const [method, ...rawArgs] = validation.split(':');
+      const args = rawArgs.map(JSON.parse);
+      const validatorArgs = [value].concat(args);
+
+      const errors = this.state.errors;
+      if (validator[method](...validatorArgs)) {
+        errors.delete(key);
+      } else {
+        errors.set(key, errorMessage);
+      }
+      this.setState({ errors });
+    });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.validate()) {
+    if (this.isValid()) {
       this.props.onSubmit(this.getFormData());
     }
   }
 
-  validate() {
+  isValid() {
     return this.state.errors.size === 0;
   }
 
@@ -60,8 +86,7 @@ export default class Form extends Component {
   }
 
   getValue(element) {
-    return this.isCheckbox(element) ?
-      element.checked : element.value;
+    return this.isCheckbox(element) ? element.checked : element.value;
   }
 
   isCheckbox(element) {

@@ -38,9 +38,13 @@ export default class SignInForm extends Component {
           <div className='form__body'>
             <input ref='phone' name='phone'
               type='text' placeholder='Телефон'
+              data-validations='isMobilePhone:"ru-RU"'
+              data-error='Должен быть в формате +79XXXXXX'
               className='input' required />
             <input ref='passcode' name='passcode'
               type='password' placeholder='Код доступа'
+              data-validations='isAlphanumeric,isLowercase'
+              data-error='Буквы или цифры в нижем регистре'
               className='input' required />
           </div>
           <div className='form__footer'>
