@@ -19,6 +19,8 @@ class Auth {
       } else {
         Router.replaceWith('index');
       }
+    }).catch(({ status, message }) => {
+      console.log(`Unable to sign-in: ${status} - ${message}`);
     });
   }
 
@@ -32,12 +34,12 @@ class Auth {
     return user && JSON.parse(user);
   }
 
-  getToken() {
-    return localStorage.getItem('token');
-  }
-
   isAuthenticated() {
     return !!this.getToken();
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
   }
 }
 

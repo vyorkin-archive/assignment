@@ -25,8 +25,6 @@ export default class SignInForm extends Component {
     };
   }
 
-  state = { errors: new Map() }
-
   render() {
     return (
       <div>
@@ -74,13 +72,7 @@ export default class SignInForm extends Component {
     AuthStore.requestPasscode(phone);
   }
 
-  validate() {
-    return this.state.errors.size === 0;
-  }
-
   handleSubmit(form) {
-    if (this.validate()) {
-      AuthActions.signIn(form);
-    }
+    AuthActions.signIn(form);
   }
 }

@@ -14,25 +14,31 @@ class Api {
     return this.ajax(endpoint, 'post', { data });
   }
 
-  async ajax(endpoint, method, options) {
+  ajax(endpoint, method, options) {
     const { params, data: data = null } = options;
 
     const query = this.queryParams(params);
     const url = `${this.rootUrl}/${endpoint}${query}`;
 
-    try {
-      const response = await fetch(url, {
-        method: method,
-        body: data
-      });
-      return await response.json();
-    } catch (err) {
-      console.log('AJAX error: ', err);
-    }
+    return fetch(url, { method: method, body: data })
+      .then(this.processResponse);
   }
 
   queryParams(params) {
     return params ? '?' + Qs.stringify(params) : '';
+  }
+
+  processResponse(response) {
+    return new Promise((resolve, reject) => {
+      if (response.ok) {
+        resolve(response.json());
+      } else {
+        reject({
+          status: response.status,
+          message: response.statusText
+        });
+      }
+    });
   }
 }
 

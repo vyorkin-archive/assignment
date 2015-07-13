@@ -1,5 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 
+import validator from 'validator';
+
 export default class Form extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired
@@ -9,7 +11,11 @@ export default class Form extends Component {
     className: 'form'
   };
 
-  fields = new Map();
+  constructor(props) {
+    super(props);
+    this.fields = new Map();
+    this.state = { errors: new Map() };
+  }
 
   render() {
     return (
@@ -30,19 +36,24 @@ export default class Form extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onSubmit(this.createFormData());
+    if (this.validate()) {
+      this.props.onSubmit(this.getFormData());
+    }
+  }
+
+  validate() {
+    return this.state.errors.size === 0;
+  }
+
+  getFormData() {
+    const formData = new FormData();
+    [...this.fields].forEach(([k, v]) => formData.append(k, v));
+    return formData;
   }
 
   getValue(element) {
-    return this.isCheckbox(element) ? element.checked : element.value;
-  }
-
-  createFormData() {
-    const formData = new FormData();
-    [...this.fields].forEach(([k, v]) => {
-      formData.append(k, v);
-    });
-    return formData;
+    return this.isCheckbox(element) ?
+      element.checked : element.value;
   }
 
   isCheckbox(element) {

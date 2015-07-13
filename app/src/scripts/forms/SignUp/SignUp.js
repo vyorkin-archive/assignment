@@ -33,8 +33,7 @@ export default class SignUpForm extends Component {
   };
 
   state = {
-    country: null,
-    errors: new Map()
+    country: null
   }
 
   componentWillMount() {
