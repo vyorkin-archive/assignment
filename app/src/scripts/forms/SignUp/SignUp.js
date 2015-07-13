@@ -5,7 +5,10 @@ import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/default.css';
 
+import SignUpActions from '../../actions/SignUpActions';
 import GeoStore from '../../stores/GeoStore';
+
+import Form from '../Form';
 
 import './SignUp.css';
 
@@ -40,7 +43,7 @@ export default class SignUpForm extends Component {
 
   render() {
     return (
-        <form onSubmit={::this.handleSubmit} className='form'>
+        <Form onSubmit={::this.handleSubmit}>
           <div className='form__body'>
             <input type='text' placeholder='Фамилия' className='input' required />
             <input type='text' placeholder='Имя' className='input' required />
@@ -64,7 +67,7 @@ export default class SignUpForm extends Component {
               </button>
             </div>
           </div>
-        </form>
+        </Form>
     );
   }
 
@@ -72,10 +75,9 @@ export default class SignUpForm extends Component {
     return this.state.errors.size === 0;
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    if (validate()) {
-      console.log('form is valid');
+  handleSubmit(form) {
+    if (this.validate()) {
+      SignUpActions.signUp(form);
     }
   }
 

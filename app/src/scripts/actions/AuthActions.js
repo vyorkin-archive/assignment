@@ -6,10 +6,7 @@ class AuthActions {
     this.generateActions('receivePasscode');
   }
 
-  signIn(phone, passcode) {
-    const form = new FormData();
-    form.append('phone', phone);
-    form.append('passcode', passcode);
+  signIn(form) {
     return auth.signIn(form);
   }
 

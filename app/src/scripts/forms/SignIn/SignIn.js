@@ -9,6 +9,8 @@ import AuthStore from '../../stores/AuthStore';
 
 import Notification from '../../components/Notification';
 
+import Form from '../Form';
+
 import './SignIn.css';
 
 @connectToStores
@@ -34,10 +36,14 @@ export default class SignInForm extends Component {
             <span className='passcode__value'>{this.props.passcode}</span>
           </div>
         </Notification>
-        <form onSubmit={::this.handleSubmit} className='form'>
+        <Form onSubmit={::this.handleSubmit}>
           <div className='form__body'>
-            <input ref='phone' type='text' placeholder='Телефон' className='input' required />
-            <input ref='passcode' type='password' placeholder='Код доступа' className='input' required />
+            <input ref='phone' name='phone'
+              type='text' placeholder='Телефон'
+              className='input' required />
+            <input ref='passcode' name='passcode'
+              type='password' placeholder='Код доступа'
+              className='input' required />
           </div>
           <div className='form__footer'>
             <a className='link link--success'
@@ -58,7 +64,7 @@ export default class SignInForm extends Component {
               </div>
             </div>
           </div>
-        </form>
+        </Form>
       </div>
     );
   }
@@ -72,14 +78,9 @@ export default class SignInForm extends Component {
     return this.state.errors.size === 0;
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-
+  handleSubmit(form) {
     if (this.validate()) {
-      const phone = this.refs.phone.getDOMNode().value;
-      const passcode = this.refs.passcode.getDOMNode().value;
-
-      AuthActions.signIn(phone, passcode);
+      AuthActions.signIn(form);
     }
   }
 }
