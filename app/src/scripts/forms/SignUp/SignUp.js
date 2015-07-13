@@ -71,14 +71,9 @@ export default class SignUpForm extends Component {
     );
   }
 
-  validate() {
-    return this.state.errors.size === 0;
-  }
 
   handleSubmit(form) {
-    if (this.validate()) {
-      SignUpActions.signUp(form);
-    }
+    SignUpActions.signUp(form);
   }
 
   handleCountryChange(_, [country]) {
