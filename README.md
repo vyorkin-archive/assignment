@@ -31,10 +31,12 @@ database: sqlite3 (for simplicity)
 
 # prerequisites
 
-install [stack](https://github.com/commercialhaskell/stack)
-install [nvm](https://github.com/creationix/nvm)
-install [avn](https://github.com/wbyoung/avn)
-install [avn-nvm](https://github.com/wbyoung/avn-nvm)
+install:
+
+* [stack](https://github.com/commercialhaskell/stack)
+* [nvm](https://github.com/creationix/nvm)
+* [avn](https://github.com/wbyoung/avn)
+* [avn-nvm](https://github.com/wbyoung/avn-nvm)
 
 ```
 cd api
