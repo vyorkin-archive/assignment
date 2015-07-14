@@ -13,7 +13,7 @@ test:
 	cd app && npm test
 
 install:
-	cd api && cabal install --only-dependencies
+	cd api && cabal install --only-dependencies --enable-tests && cabal configure --enable-tests
 	cd app && npm install
 
 .PHONY: api app install test repl

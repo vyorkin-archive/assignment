@@ -29,13 +29,28 @@ free, no sms
 
 database: sqlite3 (for simplicity)
 
+# prerequisites
+
+install [stack](https://github.com/commercialhaskell/stack)
+install [nvm](https://github.com/creationix/nvm)
+install [avn](https://github.com/wbyoung/avn)
+install [avn-nvm](https://github.com/wbyoung/avn-nvm)
+
+`cd api`
+`stack build`
+`cabal install --enable-tests --only-dependencies`
+`cabal configure --enable-tests`
+
+`cd app`
+`npm install`
+
 # up & running
 
 Basically its just `make api` and `make app`,
 for more details see `Makefile`
 
-* backend (api): `cd api && cabal install --only-dependencies && PORT=8088 cabal run`
-* frontend (app): `cd app && npm install && npm start`
+* backend (api): `cd api && PORT=8088 cabal run`
+* frontend (app): `cd app && npm start`
 
 To run tests:
 ```
