@@ -6,14 +6,12 @@ import auth from '../../lib/auth';
 
 import UserProfile from '../../widgets/UserProfile';
 
-import './Profile.css';
-
 @requireAuth('sign-in')
 export default class Profile {
   render() {
     return (
       <DocumentTitle title='Профиль'>
-        <section className='profile'>
+        <section className='page'>
           <h1>Профиль</h1>
           <UserProfile {...auth.currentUser()} />
         </section>

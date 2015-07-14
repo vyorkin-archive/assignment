@@ -21,5 +21,6 @@ export default {
 
   server: require('./config/server.js')(config, argv),
   browserSync: require('./config/browsersync.js')(config, argv),
-  cssnext: require('./config/cssnext.json')
+  cssnext: require('./config/cssnext.json'),
+  bemLinter: require('./config/bemLinter.js')
 }

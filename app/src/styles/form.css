@@ -1,13 +1,12 @@
 .form {
-}
+  &__body {
+  }
 
-.form__body {
-}
+  &__footer {
+  }
 
-.form__footer {
-}
-
-.form__controls {
-  margin: 1em 0;
-  display: flex;
+  &__controls {
+    margin: 1em 0;
+    display: flex;
+  }
 }

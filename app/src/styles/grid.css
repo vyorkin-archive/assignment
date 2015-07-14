@@ -1,10 +1,8 @@
 .container {
   margin: 0 auto;
   width: 80%;
-}
 
-@media (min-width: 1024px) {
-  .container {
+  @media (min-width: 1024px) {
     padding-left: 14em;
     width: 40%;
   }

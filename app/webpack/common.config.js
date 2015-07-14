@@ -5,7 +5,7 @@ import webpack from 'webpack';
 import config from '../config';
 
 import HtmlPlugin from 'html-webpack-plugin';
-import ProgressPlugin from 'nyan-progress-webpack-plugin';
+import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
 
 export default {
   entry: [path.resolve(__dirname, '../src/scripts/main')],
@@ -55,7 +55,13 @@ export default {
       title: config.appName,
       template: path.resolve(__dirname, '../src/templates/main.html')
     }),
-    new ProgressPlugin()
+    // new NyanProgressPlugin()
+    new webpack.ProgressPlugin((percentage, message) => {
+      const MOVE_LEFT = new Buffer('1b5b3130303044', 'hex').toString();
+      const CLEAR_LINE = new Buffer('1b5b304b', 'hex').toString();
+      const progress = Math.round(percentage * 100);
+      process.stdout.write(`${CLEAR_LINE}${progress}%: ${message}${MOVE_LEFT}`);
+    }),
   ],
 
   target: 'web',
@@ -67,8 +73,14 @@ export default {
     colors: true,
     reasons: config.DEVELOPMENT
   },
-
-  cssnext: config.cssnext,
+  postcss: function() {
+    return [
+      require('cssnext')(config.cssnext),
+      require('postcss-nested'),
+      require('postcss-bem-linter')(config.bemLinter),
+      require('postcss-reporter')
+    ];
+  },
   eslint: {
     configFile: path.resolve(__dirname, '../.eslintrc'),
     failOnError: false,

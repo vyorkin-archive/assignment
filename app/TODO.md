@@ -4,8 +4,9 @@
 [ ] Form validation <--
 [x] Find out whats wrong with robotolight font when building for production
 [ ] Finish markup, add links back to signin & signup
-[ ] Enable bem linter
-[ ] Connect postcss nested with cssnext
+[x] Enable bem linter
+[x] Connect postcss nested with cssnext
+[x] add postcss-reporter to see whats wrong immediately
 [ ] Rewrite styles using postcss nested
 [ ] Rewrite media queries with postcss plugin for this (forgot the name)
 [ ] Replace react-select with smth

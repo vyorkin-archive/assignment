@@ -23,7 +23,7 @@ export default merge(commonConfig, {
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css', 'cssnext']
+        loaders: ['style', 'css', 'postcss']
       },
       {
         test: /\.scss/,

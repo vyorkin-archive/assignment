@@ -7,26 +7,27 @@
 /* And here come react-select hacks!
  * I'm sorry for choosing this piece of shit */
 
+/* postcss-bem-linter: ignore */
 .Select {
   margin: 1em 0;
   touch-action: manipulation;
-}
 
-.Select.is-disabled .Select-placeholder {
-  background: #bbb;
-  color: #fff;
-}
+  &.is-disabled &-placeholder {
+    background: #bbb;
+    color: #fff;
+  }
 
-.Select.is-disabled .Select-arrow {
-  display: none;
-}
+  &.is-disabled &-arrow {
+    display: none;
+  }
 
-.Select-control {
-  font-size: 1.2em;
-  border-radius: 0;
-  touch-action: manipulation;
-}
+  &-control {
+    font-size: 1.2em;
+    border-radius: 0;
+    touch-action: manipulation;
+  }
 
-.Select-arrow {
-  margin-top: 6px;
+  &-arrow {
+    margin-top: 6px;
+  }
 }

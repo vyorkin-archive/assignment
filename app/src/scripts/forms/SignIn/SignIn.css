@@ -8,17 +8,18 @@
 
 .passcode {
   text-align: center;
+
+  &__title {
+    vertical-align: middle;
+  }
+
+  &__value {
+    margin-left: 0.4em;
+    vertical-align: middle;
+    letter-spacing: 0.4em;
+    font-family: 'robotoblack';
+    font-size: 1.8em;
+    color: #ff0;
+  }
 }
 
-.passcode__title {
-  vertical-align: middle;
-}
-
-.passcode__value {
-  margin-left: 0.4em;
-  vertical-align: middle;
-  letter-spacing: 0.4em;
-  font-family: 'robotoblack';
-  font-size: 1.8em;
-  color: #ff0;
-}

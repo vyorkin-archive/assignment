@@ -1,6 +1,7 @@
-.footer {
-}
+/** @define Footer */
 
-.footer__content {
-  padding: 1em 0;
+.footer {
+  &__content {
+    padding: 1em 0;
+  }
 }

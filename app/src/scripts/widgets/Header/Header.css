@@ -1,39 +1,42 @@
+/** @define header */
+
 .header {
   background-color: #71993a;
   display: flex;
   flex: 1;
   align-items: center;
-}
 
-.header__content {
-  padding: 1em 0;
-}
+  &__content {
+    padding: 1em 0;
+  }
 
-.header__title {
-  margin: 0;
-  font-family: 'robotolight';
-  font-size: 2em;
-  font-weight: lighter;
-  color: #fff;
-  text-decoration: none;
-}
+  &__title {
+    margin: 0;
+    font-family: 'robotolight';
+    font-size: 2em;
+    font-weight: lighter;
+    color: #fff;
+    text-decoration: none;
+  }
 
-.header__title:hover {
-  color: #020202;
-}
+  &__title:hover {
+    color: #020202;
 
-.header__highlight {
-  font-family: 'robotoblack';
-}
+    @media (min-width: 768px) and (min-height: 680px) {
+      font-size: 4em;
+    }
+  }
 
-.header__desc {
-  color: #000;
-  font-size: 0.8em;
-}
+  &__highlight {
+    font-family: 'robotoblack';
+  }
 
-@media (min-width: 360px) and (min-height: 480px) {
-  .header__desc { font-size: 1em; }
-}
-@media (min-width: 768px) and (min-height: 680px) {
-  .header__title { font-size: 4em; }
+  &__desc {
+    color: #000;
+    font-size: 0.8em;
+
+    @media (min-width: 360px) and (min-height: 480px) {
+      font-size: 1em;
+    }
+  }
 }

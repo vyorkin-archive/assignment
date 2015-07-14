@@ -8,25 +8,25 @@
   text-align: center;
   border: 1px solid transparent;
   touch-action: manipulation;
-}
 
-.button--default {
-  background-color: #fff;
-  border-color: #ccc;
-  color: #333;
-}
+  &--default {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+  }
 
-.button--default:hover {
-  background-color: #e6e6e6;
-  border-color: #adadad;
-}
+  &--default:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
 
-.button--success {
-  background-color: #71993a;
-  border-color: #618f2a;
-}
+  &--success {
+    background-color: #71993a;
+    border-color: #618f2a;
+  }
 
-.button--success:hover {
-  background-color: #89b452;
-  border-color: #74b93d;
+  &--success:hover {
+    background-color: #89b452;
+    border-color: #74b93d;
+  }
 }

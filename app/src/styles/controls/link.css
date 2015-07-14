@@ -2,11 +2,11 @@
   font-size: 0.8em;
   text-decoration: underline;
   cursor: pointer;
-}
 
-.link--success {
-  color: #71993a;
-}
-.link--success:hover {
-  color: #89b452;
+  &--success {
+    color: #71993a;
+  }
+  &--success:hover {
+    color: #89b452;
+  }
 }
