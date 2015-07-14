@@ -36,13 +36,17 @@ install [nvm](https://github.com/creationix/nvm)
 install [avn](https://github.com/wbyoung/avn)
 install [avn-nvm](https://github.com/wbyoung/avn-nvm)
 
-`cd api`
-`stack build`
-`cabal install --enable-tests --only-dependencies`
-`cabal configure --enable-tests`
+```
+cd api
+stack build
+cabal install --enable-tests --only-dependencies
+cabal configure --enable-tests
+```
 
-`cd app`
-`npm install`
+```
+cd app
+npm install
+```
 
 # up & running
 
