@@ -20,7 +20,6 @@ export default function(isProduction, enableSourceMaps) {
         preserve: true,
         appendExtensions: true
       },
-      mediaQueriesRange: true,
       import: {
         path: ['src/styles']
       }
