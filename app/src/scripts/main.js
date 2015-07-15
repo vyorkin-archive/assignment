@@ -4,6 +4,8 @@ import FastClick from 'fastclick';
 
 import appRoutes from './routes/app';
 
+import '../styles/main.css';
+
 new Promise((resolve) => {
   if (window.addEventListener) {
     window.addEventListener('DOMContentLoaded', resolve);

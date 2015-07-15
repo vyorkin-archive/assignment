@@ -55,13 +55,7 @@ export default {
       title: config.appName,
       template: path.resolve(__dirname, '../src/templates/main.html')
     }),
-    // new NyanProgressPlugin()
-    new webpack.ProgressPlugin((percentage, message) => {
-      const MOVE_LEFT = new Buffer('1b5b3130303044', 'hex').toString();
-      const CLEAR_LINE = new Buffer('1b5b304b', 'hex').toString();
-      const progress = Math.round(percentage * 100);
-      process.stdout.write(`${CLEAR_LINE}${progress}%: ${message}${MOVE_LEFT}`);
-    }),
+    new NyanProgressPlugin()
   ],
 
   target: 'web',
@@ -77,7 +71,7 @@ export default {
     return [
       require('cssnext')(config.cssnext),
       require('postcss-nested'),
-      // require('postcss-bem-linter')(config.bemLinter),
+      require('postcss-bem-linter')(config.bemLinter),
       require('postcss-reporter')
     ];
   },

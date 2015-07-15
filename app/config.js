@@ -2,18 +2,20 @@ import minimist from 'minimist';
 import { config } from './package';
 
 const argv = minimist(process.argv.slice(2));
-const production = !!argv.production || process.env.NODE_ENV === 'production';
+
+const isProduction = !!argv.production || process.env.NODE_ENV === 'production';
+const enableSourceMaps = isProduction && config.sourceMap;
 
 export default {
   argv: argv,
 
-  DEVELOPMENT: !production,
-  PRODUCTION: production,
-  ENVIRONMENT: production ? 'production' : 'development',
+  DEVELOPMENT: !isProduction,
+  PRODUCTION: isProduction,
+  ENVIRONMENT: isProduction ? 'production' : 'development',
 
   assets: ['src/assets/**'],
 
-  sourceMap: production && config.sourceMap,
+  sourceMap: enableSourceMaps,
   devtool: '#source-map',
 
   appName: config.appName,
@@ -21,6 +23,6 @@ export default {
 
   server: require('./config/server.js')(config, argv),
   browserSync: require('./config/browsersync.js')(config, argv),
-  cssnext: require('./config/cssnext.json'),
+  cssnext: require('./config/cssnext.js')(isProduction, enableSourceMaps),
   bemLinter: require('./config/bemLinter.js')
 }

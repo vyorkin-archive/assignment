@@ -22,7 +22,7 @@
   &__title:hover {
     color: #020202;
 
-    @media (min-width: 768px) and (min-height: 680px) {
+    @media screen and (--medium) {
       font-size: 4em;
     }
   }
@@ -35,7 +35,7 @@
     color: #000;
     font-size: 0.8em;
 
-    @media (min-width: 360px) and (min-height: 480px) {
+    @media screen and (--small) {
       font-size: 1em;
     }
   }

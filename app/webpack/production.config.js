@@ -40,8 +40,11 @@ export default merge(commonConfig, {
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false },
-      minimize: true, sourceMap: false
+      compress: {
+        warnings: false
+      },
+      minimize: true,
+      sourceMap: false
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new ExtractTextPlugin('styles.css')

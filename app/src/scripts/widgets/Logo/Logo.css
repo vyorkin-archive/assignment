@@ -1,7 +1,7 @@
 /** @define logo */
 
 .logo {
-  @media (min-width: 1024px) {
+  @media screen and (--large) {
     position: absolute;
     width: 422px;
     height: 100%;

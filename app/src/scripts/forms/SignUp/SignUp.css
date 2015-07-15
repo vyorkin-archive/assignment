@@ -10,7 +10,6 @@
 /* postcss-bem-linter: ignore */
 .Select {
   margin: 1em 0;
-  touch-action: manipulation;
 
   &.is-disabled &-placeholder {
     background: #bbb;
@@ -24,7 +23,6 @@
   &-control {
     font-size: 1.2em;
     border-radius: 0;
-    touch-action: manipulation;
   }
 
   &-arrow {
