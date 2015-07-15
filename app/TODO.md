@@ -5,6 +5,8 @@
 [x] Find out whats wrong with robotolight font when building for production
 [ ] Finish markup, add links back to signin & signup
 [x] Enable bem linter
+[ ] Run bem-linter plugin on @import'ed files
+[x] Try custom media queries
 [x] Connect postcss nested with cssnext
 [x] add postcss-reporter to see whats wrong immediately
 [x] Find out whats wrong with bem-linter regexp's and turn it on

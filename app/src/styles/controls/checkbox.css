@@ -1,3 +1,5 @@
+/** @define checkbox */
+
 .checkbox {
   display: inline-block;
   &__input { 

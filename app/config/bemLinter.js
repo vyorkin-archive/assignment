@@ -18,5 +18,6 @@ export default {
     const modifier = '(?:--' + NAME_REGEXP + ')?';
 
     return new RegExp('^\\.' + block + element + modifier + '$');
-  }
+  },
+  utilitySelectors: /[a-z]+(?:-[a-z]+)*/
 }

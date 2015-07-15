@@ -1,3 +1,5 @@
+/** @define notification */
+
 .notification {
   position: fixed;
   top: -100%;
@@ -7,12 +9,13 @@
   background-color: rgba(0, 0, 0, .75);
   box-shadow: 0 0 1px 1px rgba(10, 10, 11, .125);
   transition: .5s cubic-bezier(0.8, 0.01, 0.5, 1.0);
+
+  &--active {
+    top: 0;
+  }
+
+  &__content {
+    padding: 0.4em 0;
+  }
 }
 
-.notification--active {
-  top: 0;
-}
-
-.notification__content {
-  padding: 0.4em 0;
-}

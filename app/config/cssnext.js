@@ -1,10 +1,6 @@
 export default function(isProduction, enableSourceMaps) {
   return {
     sourcemap: enableSourceMaps,
-    compress: {
-      preserveHacks: isProduction,
-      removeAllComments: isProduction
-    },
     messages: {
       browser: true,
       console: true
@@ -19,9 +15,6 @@ export default function(isProduction, enableSourceMaps) {
         },
         preserve: true,
         appendExtensions: true
-      },
-      import: {
-        path: ['src/styles']
       }
     }
   };

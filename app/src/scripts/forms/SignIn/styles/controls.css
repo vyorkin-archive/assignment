@@ -1,0 +1,9 @@
+/** @define utilities */
+
+.checkbox--secure {
+  flex: 70%;
+}
+
+.button--signin {
+  flex: 30%;
+}

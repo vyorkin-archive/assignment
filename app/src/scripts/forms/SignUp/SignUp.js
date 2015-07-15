@@ -11,6 +11,8 @@ import GeoStore from '../../stores/GeoStore';
 import Form from '../Form';
 
 import './SignUp.css';
+import './styles/controls.css';
+import './styles/react-select-hacks.css';
 
 @connectToStores
 export default class SignUpForm extends Component {
