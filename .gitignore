@@ -16,3 +16,4 @@ cabal.sandbox.config
 *.hp
 api/assignment.sqlite3
 app/build
+.npm-debug*
