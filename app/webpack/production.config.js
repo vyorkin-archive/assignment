@@ -21,7 +21,7 @@ export default merge(commonConfig, {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css!cssnext')
+        loader: ExtractTextPlugin.extract('style', 'css!postcss')
       },
       {
         test: /\.scss/,
@@ -33,12 +33,12 @@ export default merge(commonConfig, {
       },
       {
         test: /\.less$/,
-        loaders: ExtractTextPlugin.extract('style', 'css', 'less')
+        loaders: ExtractTextPlugin.extract('style', 'css!less')
       }
     ]
   },
   plugins: [
-    new webpack.optimize.DedupePlugin(),
+    // new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -46,7 +46,7 @@ export default merge(commonConfig, {
       minimize: true,
       sourceMap: false
     }),
-    new webpack.optimize.AggressiveMergingPlugin(),
+    // new webpack.optimize.AggressiveMergingPlugin(),
     new ExtractTextPlugin('styles.css')
   ]
 });

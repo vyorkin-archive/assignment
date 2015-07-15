@@ -3,19 +3,19 @@ import { config } from './package';
 
 const argv = minimist(process.argv.slice(2));
 
-const isProduction = !!argv.production || process.env.NODE_ENV === 'production';
-const enableSourceMaps = isProduction && config.sourceMap;
+const production = !!argv.production || process.env.NODE_ENV === 'production';
+const sourcemap = !production && config.sourceMap;
 
 export default {
   argv: argv,
 
-  DEVELOPMENT: !isProduction,
-  PRODUCTION: isProduction,
-  ENVIRONMENT: isProduction ? 'production' : 'development',
+  DEVELOPMENT: !production,
+  PRODUCTION: production,
+  ENVIRONMENT: production ? 'production' : 'development',
 
   assets: ['src/assets/**'],
 
-  sourceMap: enableSourceMaps,
+  sourceMap: sourcemap,
   devtool: '#source-map',
 
   appName: config.appName,
@@ -23,6 +23,6 @@ export default {
 
   server: require('./config/server.js')(config, argv),
   browserSync: require('./config/browsersync.js')(config, argv),
-  cssnext: require('./config/cssnext.js')(isProduction, enableSourceMaps),
+  cssnext: require('./config/cssnext.js')({ sourcemap }),
   bemLinter: require('./config/bemLinter.js')
 }

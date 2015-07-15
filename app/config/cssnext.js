@@ -1,6 +1,6 @@
-export default function(isProduction, enableSourceMaps) {
+export default function({ sourcemap }) {
   return {
-    sourcemap: enableSourceMaps,
+    sourcemap: sourcemap,
     messages: {
       browser: true,
       console: true

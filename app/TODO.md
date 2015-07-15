@@ -12,6 +12,7 @@
 [x] Find out whats wrong with bem-linter regexp's and turn it on
 [x] Rewrite styles using postcss nested
 [x] Rewrite media queries with postcss plugin for this (forgot the name)
+[x] Make header title clickable
 [ ] Replace react-select with smth
 [ ] Try to cache request using local in sources
 [ ] Find out how to enable source maps with flowcheck-loader
@@ -19,7 +20,6 @@
 [ ] Browsersync doesn't work custom react components?
 [ ] Input svg animation
 [ ] Bodyguard svg animation
-[x] Make header title clickable
 [ ] Try svgo-loader
 [ ] Hardcore acceptance testing
 

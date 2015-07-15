@@ -1,13 +1,13 @@
 @import 'normalize.css';
-@import 'base.css';
-@import 'grid.css';
-@import 'typography.css';
-@import 'form.css';
+@import 'base';
+@import 'grid';
+@import 'typography';
+@import 'form';
 
-@import 'controls/input.css';
-@import 'controls/checkbox.css';
-@import 'controls/button.css';
-@import 'controls/link.css';
+@import 'controls/input';
+@import 'controls/checkbox';
+@import 'controls/button';
+@import 'controls/link';
 
 html {
   overflow-x: hidden;

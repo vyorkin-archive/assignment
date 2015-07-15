@@ -38,6 +38,7 @@ export default {
       },
       {
         test: /\.woff$/,
+        include: [path.resolve(__dirname, '../src/fonts')],
         loaders: ['url?limit=25000']
       }
     ],
