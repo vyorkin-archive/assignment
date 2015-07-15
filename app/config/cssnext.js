@@ -1,15 +1,15 @@
 export default function(isProduction, enableSourceMaps) {
   return {
+    sourcemap: enableSourceMaps,
+    compress: {
+      preserveHacks: isProduction,
+      removeAllComments: isProduction
+    },
     messages: {
       browser: true,
       console: true
     },
     features: {
-      compress: {
-        preserveHacks: isProduction,
-        removeAllComments: isProduction
-      },
-      sourcemap: enableSourceMaps,
       calc: true,
       customMedia: {
         extensions: {
