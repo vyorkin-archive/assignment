@@ -22,4 +22,4 @@ toKey key = toSqlKey $ fromIntegral (key :: Integer)
 generatePasscode :: Int -> IO (String)
 generatePasscode len = do
     gen <- newStdGen
-    return $ take len $ randomRs ('a','z') gen
+    return $ take len $ randomRs ('a', 'z') gen

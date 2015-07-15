@@ -7,6 +7,7 @@
 [x] Enable bem linter
 [x] Connect postcss nested with cssnext
 [x] add postcss-reporter to see whats wrong immediately
+[ ] find out whats wrong with bem-linter regexp's and turn it on
 [ ] Rewrite styles using postcss nested
 [ ] Rewrite media queries with postcss plugin for this (forgot the name)
 [ ] Replace react-select with smth

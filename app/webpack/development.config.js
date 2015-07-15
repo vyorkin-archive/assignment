@@ -49,6 +49,8 @@ export default merge(commonConfig, {
     hot: true,
     noInfo: true,
     historyApiFallback: true,
+    quiet: true,
+    silent: true,
     stats: {
       colors: true,
       reasons: true
