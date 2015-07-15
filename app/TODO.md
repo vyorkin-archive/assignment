@@ -7,7 +7,7 @@
 [x] Enable bem linter
 [x] Connect postcss nested with cssnext
 [x] add postcss-reporter to see whats wrong immediately
-[x] Find out whats wrong with bem-linter regexp's and turn it on <--
+[x] Find out whats wrong with bem-linter regexp's and turn it on
 [x] Rewrite styles using postcss nested
 [x] Rewrite media queries with postcss plugin for this (forgot the name)
 [ ] Replace react-select with smth
@@ -21,4 +21,5 @@
 [ ] Try svgo-loader
 [ ] Hardcore acceptance testing
 
+[ ] Try redux!
 [ ] Write a form validation lib
