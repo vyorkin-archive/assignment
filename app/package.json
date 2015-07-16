@@ -30,6 +30,7 @@
     "qs": "^4.0.0",
     "react": "^0.13.3",
     "react-document-title": "^1.0.2",
+    "react-mixin": "^1.6.0",
     "react-router": "^0.13.3",
     "react-select": "^0.5.5",
     "validator": "^3.41.2",

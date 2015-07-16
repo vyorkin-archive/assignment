@@ -56,7 +56,7 @@ export default class Form extends Component {
     validations.split(',').forEach((validation) => {
       const [method, ...rawArgs] = validation.split(':');
       const args = rawArgs.map(JSON.parse);
-      const validatorArgs = [value].concat(args);
+      const validatorArgs = [value, ...args];
 
       const errors = this.state.errors;
       if (validator[method](...validatorArgs)) {
