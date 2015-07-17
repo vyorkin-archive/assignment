@@ -2,6 +2,7 @@
 [x] Fix layout for horizontal orientation, introduce additional media queries
 [x] Replace some media queries with flexbox, rethink layout
 [ ] Form validation <--
+[ ] Fix jest problem (needs --harmonize)
 [x] Find out whats wrong with robotolight font when building for production
 [ ] Finish markup, add links back to signin & signup
 [x] Enable bem linter

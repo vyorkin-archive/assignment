@@ -35,7 +35,7 @@ export default class Form extends Component {
 
   renderErrors() {
     return (
-      <ul>{[...this.state.errors].map(([k, v]) => <li>{v}</li>)}</ul>
+      <ul>{[...this.state.errors].map(([k, v]) => <li key={k}>{v}</li>)}</ul>
     );
   }
 

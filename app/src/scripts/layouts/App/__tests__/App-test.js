@@ -1,4 +1,3 @@
-jest.dontMock('../../spec/support/stubRouterContext');
 jest.dontMock('../App');
 
 import React from 'react/addons';

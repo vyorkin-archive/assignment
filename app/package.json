@@ -64,7 +64,7 @@
     "jest-cli": "^0.4.15",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
-    "localtunnel": "^1.5.1",
+    "localtunnel": "^1.6.0",
     "minimist": "^1.1.1",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.2.0",
@@ -84,6 +84,18 @@
     "webpack-dev-server": "^1.10.1",
     "webpack-merge": "^0.1.2"
   },
+  "jest": {
+    "rootDir": "./src/scripts",
+    "scriptPreprocessor": "./src/scripts/spec/support/jestPreprocessor.js",
+    "testFileExtensions": ["js"],
+    "moduleFileExtensions": ["js", "jsx"],
+    "unmockedModulePathPatterns": [
+      "node_modules/react",
+      "node_modules/babel-runtime",
+      "./spec/support/stubRouterContext"
+    ]
+  },
+
   "scripts": {
     "start": "gulp",
     "test": "jest",

@@ -37,7 +37,7 @@ export default class SignInForm extends Component {
             <span className='passcode__value'>{this.props.passcode}</span>
           </div>
         </Notification>
-        <Form onSubmit={::this.handleSubmit}>
+        <Form onValid={::this.handleValid} onSubmit={::this.handleSubmit}>
           <div className='form__body'>
             <input ref='phone' name='phone'
               type='text' placeholder='Телефон'
