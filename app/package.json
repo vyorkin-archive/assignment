@@ -56,6 +56,7 @@
     "flowcheck-loader": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-changed": "^1.2.1",
+    "gulp-jest-iojs": "^1.0.0",
     "gulp-load-plugins": "^1.0.0-rc",
     "gulp-size": "^1.2.3",
     "gulp-util": "^3.0.6",
@@ -84,21 +85,9 @@
     "webpack-dev-server": "^1.10.1",
     "webpack-merge": "^0.1.2"
   },
-  "jest": {
-    "rootDir": "./src/scripts",
-    "scriptPreprocessor": "./src/scripts/spec/support/jestPreprocessor.js",
-    "testFileExtensions": ["js"],
-    "moduleFileExtensions": ["js", "jsx"],
-    "unmockedModulePathPatterns": [
-      "node_modules/react",
-      "node_modules/babel-runtime",
-      "./spec/support/stubRouterContext"
-    ]
-  },
-
   "scripts": {
     "start": "gulp",
-    "test": "jest",
+    "test": "gulp test",
     "lint": "eslint src",
     "build": "gulp build --production"
   },
