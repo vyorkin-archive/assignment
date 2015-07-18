@@ -6,6 +6,8 @@
 [ ] Form validation <--
 [ ] Finish markup, add links back to signin & signup
 [x] Enable bem linter
+[ ] Enable test coverage reporting
+[ ] Integrate with coveralls
 [ ] Run bem-linter plugin on @import'ed files
 [x] Try custom media queries
 [x] Connect postcss nested with cssnext

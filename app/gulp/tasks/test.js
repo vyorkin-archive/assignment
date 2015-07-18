@@ -14,6 +14,7 @@ gulp.task('test', function () {
     moduleFileExtensions: [
       'js',
       'jsx',
-    ]
+    ],
+    collectCoverage: true,
   }));
 });
