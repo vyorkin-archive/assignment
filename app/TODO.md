@@ -1,9 +1,9 @@
 [x] Finish notification component
 [x] Fix layout for horizontal orientation, introduce additional media queries
 [x] Replace some media queries with flexbox, rethink layout
-[ ] Form validation <--
-[ ] Fix jest problem (needs --harmonize)
+[x] Fix jest problem (needs --harmonize)
 [x] Find out whats wrong with robotolight font when building for production
+[ ] Form validation <--
 [ ] Finish markup, add links back to signin & signup
 [x] Enable bem linter
 [ ] Run bem-linter plugin on @import'ed files

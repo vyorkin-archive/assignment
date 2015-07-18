@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
  
-export default (Component, props, stubs) => {
+export default (target, props, stubs) => {
   function RouterStub() {}
  
   Object.assign(RouterStub, {
@@ -19,21 +19,18 @@ export default (Component, props, stubs) => {
     setRouteComponentAtDepth() {}
   }, stubs);
  
-  return class Wrapped extends React.Component {
+  return class Wrapper extends Component {
     static childContextTypes = {
       router: PropTypes.func,
       routeDepth: PropTypes.number
     }
  
     getChildContext() {
-      return {
-        router: RouterStub,
-        routeDepth: 0
-      };
+      return { router: RouterStub, routeDepth: 0 };
     }
  
     render() {
-      return React.createElement(Component, props);
+      return React.createElement(target, props);
     }
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { RouteHandler } from 'react-router';
 import DocumentTitle from 'react-document-title';
 
@@ -8,7 +8,7 @@ import Navigation from '../../widgets/Navigation';
 
 import './App.css';
 
-export default class App {
+export default class App extends Component {
   render() {
     return (
       <DocumentTitle title='PROTECTIM'>

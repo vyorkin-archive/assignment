@@ -11,8 +11,8 @@ langs/stack/tech/tags/buzz:
 * [babel](https://babeljs.io/)
 * [react](http://facebook.github.io/react/)
 * [react-router](https://github.com/rackt/react-router)
-* [jest](https://facebook.github.io/jest/)
 * [alt](https://github.com/goatslacker/alt)
+* [jest](https://facebook.github.io/jest/)
 * [scotty](https://github.com/scotty-web/scotty)
 * [persistent](https://github.com/yesodweb/persistent)
 * [esqueleto](https://github.com/prowdsponsor/esqueleto)
@@ -24,6 +24,7 @@ langs/stack/tech/tags/buzz:
 * [postcss](https://github.com/postcss/postcss), [cssnext](http://cssnext.io)
 * [normalize.css](http://necolas.github.io/normalize.css/)
 * [fastclick](https://github.com/ftlabs/fastclick)
+* [blanket](https://github.com/alex-seville/blanket)
 
 free, no sms
 
